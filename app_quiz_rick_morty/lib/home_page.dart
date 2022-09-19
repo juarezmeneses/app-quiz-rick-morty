@@ -12,11 +12,15 @@ class HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Quiz Rick and Morty'),
+        backgroundColor: Colors.teal,
+      ),
+      body: Center(
         child: GestureDetector(
           child: Text(
-            'Quiz Rick and Morty: $counter',
+            'Question: $counter',
             textDirection: TextDirection.ltr,
             style: TextStyle(fontSize: 25.0),
           ),
@@ -26,6 +30,15 @@ class HomePageState extends State<HomePage> {
             });
           },
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        backgroundColor: Colors.teal,
+        onPressed: () {
+          setState(() {
+            counter++;
+          });
+        },
       ),
     );
   }
