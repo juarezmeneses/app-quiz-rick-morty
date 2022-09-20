@@ -1,3 +1,4 @@
+import 'package:app_quiz_rick_morty/home_page.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
@@ -51,7 +52,9 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: () {
                     if (email == 'juarezlmfilho@gmail.com' &&
                         password == '123') {
-                      print('correct');
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) => HomePage()),
+                      );
                     } else {
                       print('error');
                     }
