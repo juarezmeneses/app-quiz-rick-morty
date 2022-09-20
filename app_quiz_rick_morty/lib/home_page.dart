@@ -1,3 +1,4 @@
+import 'package:app_quiz_rick_morty/app_controller.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,17 +18,12 @@ class HomePageState extends State<HomePage> {
         title: Text('Quiz Rick and Morty'),
         backgroundColor: Colors.teal,
       ),
-      body: Container(
-        height: 200,
-        width: 200,
-        color: Colors.black,
-        child: Center(
-          child: Container(
-            height: 100,
-            width: 100,
-            color: Colors.green,
-          ),
-        ),
+      body: Center(
+        child: Switch(
+            value: AppController.instance.isDarkTheme,
+            onChanged: (value) {
+              AppController.instance.changeTheme();
+            }),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
