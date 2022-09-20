@@ -17,18 +17,16 @@ class HomePageState extends State<HomePage> {
         title: Text('Quiz Rick and Morty'),
         backgroundColor: Colors.teal,
       ),
-      body: Center(
-        child: GestureDetector(
-          child: Text(
-            'Question: $counter',
-            textDirection: TextDirection.ltr,
-            style: TextStyle(fontSize: 25.0),
+      body: Container(
+        height: 200,
+        width: 200,
+        color: Colors.black,
+        child: Center(
+          child: Container(
+            height: 100,
+            width: 100,
+            color: Colors.green,
           ),
-          onTap: () {
-            setState(() {
-              counter++;
-            });
-          },
         ),
       ),
       floatingActionButton: FloatingActionButton(
