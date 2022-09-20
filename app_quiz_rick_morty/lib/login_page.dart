@@ -52,9 +52,7 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: () {
                     if (email == 'juarezlmfilho@gmail.com' &&
                         password == '123') {
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (context) => HomePage()),
-                      );
+                      Navigator.of(context).pushReplacementNamed('/home');
                     } else {
                       print('error');
                     }
