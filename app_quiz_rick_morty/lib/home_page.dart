@@ -18,7 +18,9 @@ class HomePageState extends State<HomePage> {
         child: Column(
           children: [
             UserAccountsDrawerHeader(
-              currentAccountPicture: Image.asset('assets/images/login.webp'),
+              currentAccountPicture: ClipRRect(
+                  borderRadius: BorderRadius.circular(40),
+                  child: Image.asset('assets/images/login.webp')),
               accountName: Text('Rick and Morty'),
               accountEmail: Text('rickandmorty@gmail.com'),
             ),
