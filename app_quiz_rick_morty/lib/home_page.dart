@@ -14,6 +14,33 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+              currentAccountPicture: Image.asset('assets/images/login.webp'),
+              accountName: Text('Rick and Morty'),
+              accountEmail: Text('rickandmorty@gmail.com'),
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Start'),
+              subtitle: Text('Home Screen'),
+              onTap: () {
+                print('home');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text('Logout'),
+              subtitle: Text('End Session'),
+              onTap: () {
+                Navigator.of(context).pushReplacementNamed('/');
+              },
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         title: Text('Quiz Rick and Morty'),
         backgroundColor: Colors.teal,
