@@ -18,7 +18,7 @@ class AppWidget extends StatelessWidget {
                 borderSide: BorderSide(width: 3, color: Colors.greenAccent),
               ),
               focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(width: 3, color: Colors.white),
+                borderSide: BorderSide(width: 3, color: Colors.lightBlueAccent),
               ),
             ),
             brightness: AppController.instance.isDarkTheme

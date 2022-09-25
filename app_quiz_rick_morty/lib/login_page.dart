@@ -29,44 +29,61 @@ class _LoginPageState extends State<LoginPage> {
                 child: Image.asset('assets/images/logo.png'),
               ),
               SizedBox(height: 10),
-              TextField(
-                style: TextStyle(color: Colors.white),
-                onChanged: (text) {
-                  email = text;
-                },
-                cursorColor: Colors.teal,
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  labelText: 'Email',
-                  labelStyle: TextStyle(color: Colors.white),
-                  border: OutlineInputBorder(),
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                      left: 12, right: 12, top: 20, bottom: 12),
+                  child: Column(
+                    children: [
+                      TextField(
+                        style: TextStyle(color: Colors.greenAccent),
+                        onChanged: (text) {
+                          email = text;
+                        },
+                        cursorColor: Colors.teal,
+                        keyboardType: TextInputType.emailAddress,
+                        decoration: InputDecoration(
+                          labelText: 'Email',
+                          labelStyle: TextStyle(color: Colors.greenAccent),
+                          border: OutlineInputBorder(),
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      TextField(
+                        style: TextStyle(color: Colors.greenAccent),
+                        onChanged: (text) {
+                          password = text;
+                        },
+                        cursorColor: Colors.teal,
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          labelText: 'Password',
+                          labelStyle: TextStyle(color: Colors.greenAccent),
+                          border: OutlineInputBorder(),
+                        ),
+                      ),
+                      SizedBox(height: 15),
+                      ElevatedButton(
+                        child: Container(
+                          width: double.infinity,
+                          child: Text(
+                            'Login',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        onPressed: () {
+                          if (email == 'juarezlmfilho@gmail.com' &&
+                              password == '123') {
+                            Navigator.of(context).pushReplacementNamed('/home');
+                          } else {
+                            print('error');
+                          }
+                        },
+                      )
+                    ],
+                  ),
                 ),
               ),
-              SizedBox(height: 10),
-              TextField(
-                style: TextStyle(color: Colors.white),
-                onChanged: (text) {
-                  password = text;
-                },
-                cursorColor: Colors.teal,
-                obscureText: true,
-                decoration: InputDecoration(
-                  labelText: 'Password',
-                  labelStyle: TextStyle(color: Colors.white),
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              SizedBox(height: 15),
-              ElevatedButton(
-                child: Text('Login'),
-                onPressed: () {
-                  if (email == 'juarezlmfilho@gmail.com' && password == '123') {
-                    Navigator.of(context).pushReplacementNamed('/home');
-                  } else {
-                    print('error');
-                  }
-                },
-              )
             ],
           ),
         ),
