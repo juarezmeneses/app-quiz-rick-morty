@@ -12,7 +12,15 @@ class AppWidget extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           theme: ThemeData(
-            primarySwatch: Colors.red,
+            primarySwatch: Colors.teal,
+            inputDecorationTheme: const InputDecorationTheme(
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(width: 3, color: Colors.greenAccent),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(width: 3, color: Colors.white),
+              ),
+            ),
             brightness: AppController.instance.isDarkTheme
                 ? Brightness.dark
                 : Brightness.light,
