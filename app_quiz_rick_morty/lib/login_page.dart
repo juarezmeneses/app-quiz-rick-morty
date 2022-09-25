@@ -28,8 +28,7 @@ class _LoginPageState extends State<LoginPage> {
                 Container(
                   width: 500,
                   height: 250,
-                  child: Image.network(
-                      'https://i0.wp.com/bloody-disgusting.com/wp-content/uploads/2018/03/Screen-Shot-2018-03-16-at-11.15.17-AM.jpg?w=1666&ssl=1'),
+                  child: Image.asset('assets/images/login.webp'),
                 ),
                 SizedBox(height: 10),
                 TextField(
